@@ -1,38 +1,285 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Poppins:wght@500&display=swap");
+/* 
+font-family: 'Fugaz One', cursive;
+font-family: 'Poppins', sans-serif;
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.full_cont{
+  width: 100%;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.login_form{
+  display: block;
+}
+.login_form_none{
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+/* Site Name */
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 50px 100px;
+}
+.burger {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.line_one {
+  position: relative;
+  width: 26px;
+  height: 1px;
+  border: 1px solid transparent;
+  background-color: #000000;
+}
+.line_two {
+  position: relative;
+  width: 26px;
+  left: 5px;
+  height: 1px;
+  border: 1px solid transparent;
+  background-color: #000000;
+}
+.line_three {
+  position: relative;
+  width: 26px;
+  height: 1px;
+  border: 1px solid transparent;
+  background-color: #000000;
+}
+.name i {
+  font-size: 32px;
+  color: gray;
+}
+.name h1 {
+  color: #666666;
+  font-family: "Fugaz One", cursive;
+}
+
+/*  */
+
+.my-cont {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.my-cont h1 {
+  font-size: 40px;
+  color: #696968;
+  font-family: "Poppins", sans-serif;
+}
+
+.my-cont h1 span {
+  color: #b6802e;
+  font-family: "Poppins", sans-serif;
+}
+.my-cont p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 6px;
+  font-size: 17px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #787878;
+}
+.social_icons {
+  width: 12vw;
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.social_icons i {
+  font-size: 35px;
+}
+
+.grey_icon {
+  color: #555555;
+}
+.gold_icon {
+  color: #e4a951;
+}
+
+.or_line {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: space-between;
+}
+.hr {
+  width: 97%;
+  background-color: #7e7e7e;
+  border: none;
+  padding: 1px;
+}
+.or_line h6 {
+  margin: 0 6px;
+  color: #7e7e7e;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+
+form {
+  width: 40%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width:786px){
+  form{
+    width: 100%;
+  }
+  .social_icons{
+    width: 60vw;
+  }
+  .my-cont h1{
+    font-size: 35px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .my-cont{
+    margin-bottom: 40px;
+  }
+  .name{
+    margin: 50px 0;
+  }
+}
+
+.remember {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 15px;
+  color: #686868;
+}
+
+#remember_checkbox {
+  margin-right: 10px;
+  background-color: #e3e3e3;
+}
+.forgot_pswd {
+  width: 100%;
+  position: relative;
+  left: 0;
+  margin-top: 10px;
+  text-decoration: none;
+  color: rgba(139, 103, 48, 0.966);
+  font-weight: 500;
+}
+
+.login_btn {
+  font-size: 22px;
+  padding: 4px 80px ;
+  background: #E29F3A;
   color: white;
+  margin-top: 60px;
+  box-shadow: 4px 4px 17px rgba(0, 0, 0, 0.25);
+  border-radius: 19px;
+  border: 1px solid transparent;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+
+
+
+
+/* Gap Section */
+
+.gap{
+  background-color: #E29F3A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.45);
+}
+.text-area{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-area h1{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 68px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #FFFFFF;
+}
+.text-area p{
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 28px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #E9E9E9;
+}
+
+.page_shifter{
+  font-size: 22px;
+  padding: 4px 80px ;
+  background: white;
+  color: #E29F3A;
+  margin-top: 60px;
+  box-shadow: 4px 4px 17px rgba(0, 0, 0, 0.25);
+  border-radius: 19px;
+  border: 1px solid transparent;
+}
+
+
+
+
+/* Sign Up */
+
+.signup_form{
+  display: none;
+}
+.signup_form_block{
+  display: block;
+}
+
+.signup_btn{
+  font-size: 22px;
+  padding: 4px 80px ;
+  background: #E29F3A;
+  color: white;
+  margin-top: 60px;
+  box-shadow: 4px 4px 17px rgba(0, 0, 0, 0.25);
+  border-radius: 19px;
+  border: 1px solid transparent;
 }

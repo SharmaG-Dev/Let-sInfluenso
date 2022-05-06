@@ -5,11 +5,13 @@ import Admin from './components/admin';
 import InfluencerUser from './components/Influencer';
 import BrandUser from './components/brand';
 import Dashboard from './components/admin/dashboard';
+import SignUp from './components/main/signup';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
+      <Route element ={<SignUp/>} path="/" />
       <Route element ={<Admin/>} path="admin">
         <Route element={<Dashboard/>} path="dashboard"></Route>
       </Route>

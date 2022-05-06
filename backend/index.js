@@ -1,13 +1,26 @@
 const express = require("express");
 
-const userRouter =require("./routers/UserRouter");
+const BrandUser =require("./routers/BrandRouter");
 
+const influRouter =require("./routers/InfluencerRouter");
+
+const cors = require("cors");
 
 const app  = express();
 
 const port = 5000;
 
-app.use("/user" , userRouter);
+app.use(cors({
+    origin : ["http://localhost:3000"],
+}))
+
+app.use(express.json())
+
+app.use("/brand", BrandUser);
+app.use("/influencer" , influRouter);
+
+
+
 
 app.get("/", (req , res) =>{
     console.log("Running")
