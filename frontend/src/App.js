@@ -6,12 +6,14 @@ import InfluencerUser from './components/Influencer';
 import BrandUser from './components/brand';
 import Dashboard from './components/admin/dashboard';
 import SignUp from './components/main/signup';
+import Home from './components/main/home';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route element ={<SignUp/>} path="/" />
+      <Route element ={<Home/>} path ="/" />
+      <Route element ={<SignUp/>} path="/signup" />
       <Route element ={<Admin/>} path="admin">
         <Route element={<Dashboard/>} path="dashboard"></Route>
       </Route>
