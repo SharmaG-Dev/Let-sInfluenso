@@ -2,13 +2,10 @@
 const mongoose = require("../connections");
 
 const schema = new mongoose.Schema({
-    username : String ,
     name :String ,
     email : String ,
     contact : Number ,
-    instagramid : String,
-    linkedinid : String,
-    facebookid : String,
+    password :String,
     createdAt : { type : Date, default : new Date() },
 
 });
