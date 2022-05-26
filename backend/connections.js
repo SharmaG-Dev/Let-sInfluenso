@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 
-const url =  "mongodb+srv://mmm:mmm@cluster0.gvyon.mongodb.net/mernmttf1230?retryWrites=true&w=majority";
-
-
-
+const url =
+  "mongodb+srv://mmm:mmm@cluster0.gvyon.mongodb.net/influenso?retryWrites=true&w=majority";
 
 mongoose
   .connect(url)
