@@ -1,11 +1,12 @@
-import { Card, CardContent, makeStyles, TextField } from "@material-ui/core";
+
 import { useState } from "react";
 import {
     LinkedinProfile,
 } from 'react-social-plugins';
-import app_config from "../../config";
+import app_config from "../config";
 import { Formik } from "formik";
 import Swal from "sweetalert2";
+import { Card, CardContent, TextField } from "@mui/material";
 
 const ManageLinkedin = props => {
 

@@ -1,7 +1,7 @@
-import { Card, CardContent, makeStyles, TextField } from "@material-ui/core";
+import { Card, CardContent, makeStyles, TextField } from "@mui/material";
 import { useState } from "react";
 import { FacebookProvider, EmbeddedPost } from 'react-facebook';
-import app_config from "../../config";
+import app_config from "../config";
 import { Formik } from "formik";
 import Swal from "sweetalert2";
 

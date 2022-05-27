@@ -14,8 +14,8 @@ const HomePage = () => {
                 </video>
                 <div className="container">
                     <div className="auth_nav">
-                        <NavLink className="_btn" to="/influencer" >Log In</NavLink>
-                        <NavLink className="_btn" to="/influencer" >Sign up</NavLink>
+                        <NavLink className="_btn" to="/brandlogin" >Log In</NavLink>
+                        <NavLink className="_btn" to="/brandlogin" >Sign up</NavLink>
                     </div>
                     <div className="page_nav row">
                         <div className="let_influneso col-md-4">

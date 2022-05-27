@@ -1,12 +1,13 @@
-import { Card, CardContent, makeStyles, TextField } from "@material-ui/core";
+
 import { useState } from "react";
 import { FacebookProvider, EmbeddedPost } from 'react-facebook';
-import app_config from "../../config";
+import app_config from "../config";
 import { Formik } from "formik";
 import Swal from "sweetalert2";
+import { Card, CardContent, TextField } from "@mui/material";
 
 
-const ManageFB = props => {
+const ManageInsta = props => {
 
   const [postList, setPostList] = useState([]);
   const [link, setLink] = useState("");
@@ -107,4 +108,4 @@ const ManageFB = props => {
   )
 }
 
-export default ManageFB;
+export default ManageInsta;

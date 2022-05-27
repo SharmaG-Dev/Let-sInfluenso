@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import app_config from '../../config';
 import './signup.css';
 
-const SignUp = () => {
+const BrandSignup = () => {
 
   const navigate = useNavigate();
   const shifter = () => {
@@ -186,4 +186,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default BrandSignup
