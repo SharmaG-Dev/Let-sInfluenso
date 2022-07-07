@@ -6,14 +6,14 @@ import {
 import app_config from "../config";
 import { Formik } from "formik";
 import Swal from "sweetalert2";
-import { Card, CardContent, TextField } from "@mui/material";
+import { Card, CardContent, Container, TextField } from "@mui/material";
 
 const ManageLinkedin = props => {
 
     const [postList, setPostList] = useState([]);
     const [link, setLink] = useState("");
     const [profile, setProfile] = useState(JSON.parse(sessionStorage.getItem('profile')));
-    const url = app_config.api_url;
+    const url = app_config.backend_url;
 
     const addPost = () => {
         setPostList([...postList, link]);
@@ -70,6 +70,7 @@ const ManageLinkedin = props => {
     }
 
     return (
+        // <Container>
         <div className="col-md-10 mx-auto" style={{ marginTop: '5rem' }}>
             <Card>
                 <CardContent>
@@ -117,6 +118,7 @@ const ManageLinkedin = props => {
                 </CardContent>
             </Card>
         </div>
+        // </Container>
     )
 }
 

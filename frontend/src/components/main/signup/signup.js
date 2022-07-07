@@ -4,6 +4,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import app_config from '../../config';
+import Header from '../navbar/header';
 import './signup.css';
 
 const BrandSignup = () => {
@@ -89,6 +90,7 @@ const BrandSignup = () => {
 
   return (
     <div>
+      <Header/>
       <div className="container-fluid full_cont row">
         <div className="login_form col-md-9">
           <div className="name">

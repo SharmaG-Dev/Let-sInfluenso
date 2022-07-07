@@ -19,6 +19,10 @@ import ManageFB from './components/Influencer/manageFB';
 import ManageLinkedin from './components/Influencer/manageLinkedin';
 import ManageYoutube from './components/Influencer/manageYoutube';
 import ManageInsta from './components/Influencer/manageInsta';
+import Footer from './components/main/footer';
+import ShowProfile from './components/Influencer/showprofile';
+import UserShowProfile from './components/Influencer/userShowProfile';
+import UserAuthorisor from './userAuth';
 
 function App() {
   return (
@@ -30,24 +34,32 @@ function App() {
         <Route element={<ContactUs />} path="contactus" />
         <Route element={<AboutUs />} path="aboutus" />
         <Route element={<BrowseInfluencer />} path="browse" />
-        <Route element={<InfluencerProfile />} path="influencerprofile" />
+        <Route element={<InfluencerProfile />} path="influencerprofile/:id" />
         <Route element={<InfluencerLogin />} path="influencerlogin" />
         <Route element={<ManageFB />} path="fb" />
+        <Route element={<ShowProfile />} path="show" />
+        <Route element={<UserShowProfile />} path="usp" />
         <Route element={<ManageLinkedin />} path="linkdin" />
         <Route element={<ManageYoutube />} path="youtube" />
+        <Route element={<Footer />} path="footer" />
         <Route element={<ManageInsta />} path="insta" />
         <Route element={<InfluencerLogin />} path="influencerlogin" />
         <Route element={<InfluencerLogin />} path="influencerlogin" />
 
 
-        <Route element={<InfluencerUser />} path="influencer">
+        <Route element={
+          <UserAuthorisor>
+            <InfluencerUser />
+          </UserAuthorisor>
+        } path="influencer">
           <Route element={<Profile />} path="personalprofile" />
+          <Route element={<ManageFB />} path="managefb" />
+          <Route element={<ManageInsta />} path="manageinsta" />
 
         </Route>
         <Route element={<Admin />} path="admin">
           <Route element={<Dashboard />} path="dashboard"></Route>
         </Route>
-        <Route element={<InfluencerUser />} path="influenceruser"></Route>
         <Route element={<BrandUser />} path="branduser"></Route>
         <Route element={<Navigate to="/home" />} path="/"></Route>
       </Routes>

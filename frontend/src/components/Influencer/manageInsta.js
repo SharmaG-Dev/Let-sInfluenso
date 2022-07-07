@@ -4,16 +4,18 @@ import { FacebookProvider, EmbeddedPost } from 'react-facebook';
 import app_config from "../config";
 import { Formik } from "formik";
 import Swal from "sweetalert2";
-import { Card, CardContent, TextField } from "@mui/material";
+import { Card, CardContent, Container, TextField } from "@mui/material";
 
 
 const ManageInsta = props => {
 
-  const [postList, setPostList] = useState([]);
+ 
   const [link, setLink] = useState("");
   const fb_api = app_config.fb_api;
-  const url = app_config.api_url;
+  const url = app_config.backend_url;
   const [profile, setProfile] = useState(JSON.parse(sessionStorage.getItem('profile')));
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const [postList, setPostList] = useState([]);
 
 
   const handleLink = (e) => {
@@ -36,35 +38,36 @@ const ManageInsta = props => {
     console.log(value);
 
     const opt = {
-      method: "POST",
+      method: "PUT",
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ platform: 'facebook', data: value })
+      body: JSON.stringify({ instagram : value })
     }
 
-    fetch(url + '/social/add', opt)
+    fetch(url + '/influencer/update/', currentUser._id,opt)
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        fetch(url + '/profile/pushupdate/' + profile._id, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ socialProfiles: data._id }) })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
             Swal.fire({
               title: 'Success',
               icon: 'success',
               text: 'Facebook Profile Successfully Added!'
             })
-          });
+        // fetch(url + '/profile/pushupdate/' + profile._id, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ socialProfiles: data._id }) })
+        //   .then(res => res.json())
+        //   .then(data => {
+            
+        //   });
       });
   }
 
 
   return (
+    <Container>
     <div className="col-md-10 mx-auto" style={{ marginTop: '5rem' }}>
-      <Card>
+      <Card >
         <CardContent>
           <Formik
-            initialValues={fbForm}
+            initialValues={currentUser.Instagram ? currentUser.Instagram :fbForm}
             onSubmit={onFormSubmit}
           >
             {({
@@ -76,8 +79,8 @@ const ManageInsta = props => {
               <form onSubmit={handleSubmit}>
                 <h3 className="text-center">Manage Instagram Profile</h3>
 
-                <TextField className="w-100 mt-5" label="Facebook Profile Url" variant="filled" name="profileUrl" onChange={handleChange} />
-                <TextField className="w-100 mt-5" label="Avatar" variant="filled" name="avatar" onChange={handleChange} />
+                <TextField className="w-100 mt-5" label="Facebook Profile Url" variant="filled" name="profileUrl" onChange={handleChange} value={values.profileUrl} />
+                <TextField className="w-100 mt-5" label="Avatar" variant="filled" name="avatar" onChange={handleChange} value={values.avatar}  />
 
                 <div className="">
                   <button className="btn btn-primary mt-5 w-100">Submit</button>
@@ -105,6 +108,7 @@ const ManageInsta = props => {
         </CardContent>
       </Card>
     </div>
+    </Container>
   )
 }
 

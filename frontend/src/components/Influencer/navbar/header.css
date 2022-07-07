@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Poppins:wght@500&display=swap");
+
+/* 
+font-family: 'Fugaz One', cursive;
+font-family: 'Poppins', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.ful-widht{
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  position: sticky;
+  top: 0;
+  background-color: rgb(44, 40, 40);
+}
+/* 
+.auth_nav{
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid rgb(43, 37, 37);
+}
+
+.auth_nav a {
+  text-decoration: none;
+  color: #353535;
+  margin-right: 20px;
+  opacity: 0.6;
+}
+.auth_nav a:hover {
+  color: #161616;
+  opacity: 1;
+} */
+
+.header_page_nav {
+  height: 70px;
+}
+.header_let_influneso {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header_let_influneso h1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Fugaz One", cursive !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 37px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-decoration: none !important;
+}
+
+.header_page_links{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.header_page_links .links_nav{
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.header_page_links .links_nav:hover {
+  color: white;
+  opacity: 1;
+}

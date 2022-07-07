@@ -1,26 +1,61 @@
 // import { Tab, Tabs } from '@mui/material'
 // import {Phone, PersonPin, Favorite} from '@mui/icons-material';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import app_config from '../config';
 import Header from '../main/navbar/header'
 import BasicTabs from './tabs';
 
 const InfluencerProfile = () => {
 
+  const { id } = useParams();
+  const url = app_config.backend_url;
+  const [infData, setInfData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = () => {
+    fetch(url + '/influencer/getbyid/' + id)
+      .then(res => {
+        if (res.status === 200) {
+          res.json().then(data => {
+            console.log(data);
+            setInfData(data);
+            setLoading(false);
+          })
+        }
+      })
+  }
+
+  useEffect(() => {
+    fetchData()
+  
+  }, [])
+  
+
+  const viewFacebook = () => {
+    if (!loading) {
+      return <div>
+        <img className='profile_image' src={infData.facebook.avatar} />
+      </div>
+    }
+  }
 
 
   return (
     <>
-    <Header/>
+      <Header />
       <div className="container-fluid cover_img"></div>
       <div className="container-fluid row">
         <div
           className="profile-sec col-md-3 d-flex flex-column align-center justify-content-center align-items-center"
         >
-          <img
+          
+          {/* <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy0DovSk8W0X_0oxFu5IItjVK_KyXamUqjbw&usqp=CAU"
             alt="profile_image"
             className="profile_image"
-          />
+          /> */}
+          {viewFacebook()}
           <button className="btn btn-light follow_btn mt-4 w-50">
             <i className="fa-solid fa-user-plus"></i>Follow
           </button>
@@ -95,16 +130,16 @@ const InfluencerProfile = () => {
 
             </div>
           </div> */}
-          <BasicTabs/>
+          <BasicTabs />
           {/* <div className="post_icons mt-4 ">
             <div className="add_post mx-4">
               <i className="fa-solid fa-plus"></i>
             </div>
             <div className="col-md-4"></div>
           </div> */}
-          
-          </div>
+
         </div>
+      </div>
     </>
   )
 }

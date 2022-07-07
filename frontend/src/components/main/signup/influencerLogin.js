@@ -4,6 +4,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import app_config from '../../config';
+import Header from '../navbar/header';
 import './signup.css';
 
 const InfluencerLogin = () => {
@@ -13,8 +14,6 @@ const InfluencerLogin = () => {
     const shift_btn = document.querySelector(".page_shifter");
     const login_form = document.querySelector(".login_form");
     const signup_form = document.querySelector(".signup_form");
-    // const gap_h1 = document.querySelector(".shift_h1");
-    // const gap_p = document.querySelector(".shift_p");
 
     {
       shift_btn.addEventListener('click', () => {
@@ -31,13 +30,14 @@ const InfluencerLogin = () => {
     email : "" ,
     contact : "" ,
     password :"",
+    facebook: {}
   }
 
   const userSubmit = (formdata) => {
     console.log(formdata);
     window.alert(formdata.name +" " +"is registered")
 
-    fetch(url + '/brand/add', {
+    fetch(url + '/influencer/add', {
       method: 'POST',
       body: JSON.stringify(formdata),
       headers: {
@@ -57,7 +57,7 @@ const InfluencerLogin = () => {
   }
   const loginSubmit =(formdata) => {
     console.log(formdata);
-    fetch(url+'/brand/authenticate',{
+    fetch(url+'/influencer/authenticate',{
       method :"POST",
       body : JSON.stringify(formdata),
       headers :{
@@ -87,6 +87,7 @@ const InfluencerLogin = () => {
 
   return (
     <div>
+      <Header/>
       <div className="container-fluid full_cont row">
         <div className="login_form col-md-9">
           <div className="name">

@@ -1,4 +1,10 @@
+import { ExpandMore } from '@mui/icons-material'
+import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material'
 import React from 'react'
+import ManageFB from './manageFB'
+import ManageInsta from './manageInsta'
+import ManageLinkedin from './manageLinkedin'
+import ManageYoutube from './manageYoutube'
 
 const ProfileFeeds = () => {
     return (
@@ -96,6 +102,57 @@ const ProfileFeeds = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="col-md-4">
+                    <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMore />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                        >
+                            <Typography>Manage Youtube</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ManageYoutube />
+                        </AccordionDetails>
+                    </Accordion>
+                    <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMore />}
+                            aria-controls="panel2a-content"
+                            id="panel2a-header"
+                        >
+                            <Typography>Manage Linkdin</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ManageLinkedin />
+                        </AccordionDetails>
+                    </Accordion>
+                    <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMore />}
+                            aria-controls="panel2a-content"
+                            id="panel2a-header"
+                        >
+                            <Typography>Manage Instagram</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ManageInsta />
+                        </AccordionDetails>
+                    </Accordion>
+                    <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMore />}
+                            aria-controls="panel2a-content"
+                            id="panel2a-header"
+                        >
+                            <Typography>Manage Facebook</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ManageFB />
+                        </AccordionDetails>
+                    </Accordion>
+
                 </div>
             </div>
         </div>
